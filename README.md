@@ -5,7 +5,7 @@
 
 ---
 
-## 🌍 Why This Project Matters in Fintech
+##  Why This Project Matters in Fintech
 
 Credit card fraud costs the global economy **over $33 billion annually** (Nilson Report, 2023).
 Traditional rule-based systems flag too many legitimate transactions and miss sophisticated
@@ -22,15 +22,15 @@ rates operationally viable.
 
 | Feature | Description |
 |---|---|
-| 🤖 **3-model ensemble** | Logistic Regression (baseline) · Random Forest · XGBoost (primary) |
-| ⚖️ **SMOTE balancing** | Oversamples minority class to prevent model bias on imbalanced data |
-| 🧮 **Hybrid risk scoring** | `risk = 0.70 × ML_prob + 0.30 × rule_score` for robust decisions |
-| 🔍 **SHAP explainability** | Per-transaction feature impact — full auditability for ops teams |
-| 🚨 **Alert system** | Console + file logging; optional SMTP email via `.env` |
-| 📡 **Real-time streaming** | Async generator + mock Kafka queue at configurable TPS |
-| 🎛️ **Rich dashboard** | 5-tab Streamlit UI with live feed, gauges, SHAP waterfall, manual test |
-| 🐳 **Docker-ready** | Multi-stage build + docker-compose for one-command deployment |
-| ✅ **Test suite** | pytest covering API routes, business logic, preprocessing, streaming |
+|  **3-model ensemble** | Logistic Regression (baseline) · Random Forest · XGBoost (primary) |
+|  **SMOTE balancing** | Oversamples minority class to prevent model bias on imbalanced data |
+|  **Hybrid risk scoring** | `risk = 0.70 × ML_prob + 0.30 × rule_score` for robust decisions |
+|  **SHAP explainability** | Per-transaction feature impact — full auditability for ops teams |
+|  **Alert system** | Console + file logging; optional SMTP email via `.env` |
+|  **Real-time streaming** | Async generator + mock Kafka queue at configurable TPS |
+|  **Rich dashboard** | 5-tab Streamlit UI with live feed, gauges, SHAP waterfall, manual test |
+|  **Docker-ready** | Multi-stage build + docker-compose for one-command deployment |
+|  **Test suite** | pytest covering API routes, business logic, preprocessing, streaming |
 
 ---
 
@@ -66,17 +66,17 @@ rates operationally viable.
 │  streaming/transaction_stream.py  → async gen / mock Kafka queue    │
 │  dashboard/components/simulator.py → API calls + offline fallback   │
 │  dashboard/app.py                                                   │
-│    ├── 📡 Live Feed      → timeline + scrolling transaction table   │
-│    ├── 📈 Analytics      → probability dist · summary · scatter     │
-│    ├── 🔍 Transaction    → risk gauge + SHAP waterfall per TXN      │
-│    ├── 🚨 Alerts         → fraud alert console log                  │
-│    └── 🧪 Manual Test    → custom transaction submission            │
+│    ├──  Live Feed      → timeline + scrolling transaction table   │
+│    ├──  Analytics      → probability dist · summary · scatter     │
+│    ├──  Transaction    → risk gauge + SHAP waterfall per TXN      │
+│    ├──  Alerts         → fraud alert console log                  │
+│    └──  Manual Test    → custom transaction submission            │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1 — Install dependencies
 
@@ -358,4 +358,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-*Built as a fintech portfolio project demonstrating production-grade ML engineering practices.*
+*Built as a fintech  project demonstrating production-grade ML engineering practices.*
