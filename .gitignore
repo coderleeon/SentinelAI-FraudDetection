@@ -1,0 +1,57 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+*.env.local
+
+# ── Dataset (large file — auto-generated or download separately) ──────────────
+data/creditcard.csv
+
+# ── Trained model binaries (large — regenerate with python train.py) ─────────
+models/*.pkl
+
+# ── Keep evaluation reports and plots for README/portfolio ────────────────────
+!models/reports/
+!models/reports/*.png
+!models/reports/*.json
+models/training_summary.json
+models/feature_names.json
+models/fraud_alerts.log
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── IDE / OS ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log

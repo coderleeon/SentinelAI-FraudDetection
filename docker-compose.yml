@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+
+  # ── FastAPI Backend ──────────────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    container_name: fraud_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models       # persist trained model artefacts
+      - ./data:/app/data           # persist generated dataset
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - LOG_LEVEL=INFO
+      - PRIMARY_MODEL=xgboost
+    env_file:
+      - .env.example               # rename to .env and fill credentials
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import httpx; httpx.get('http://localhost:8000/health').raise_for_status()"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  # ── Streamlit Dashboard ───────────────────────────────────────────────────────
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+    container_name: fraud_dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000
+      - DASHBOARD_PORT=8501
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+networks:
+  default:
+    name: fraud_net
+
+volumes:
+  models:
+  data:
